@@ -18,7 +18,7 @@ import { FreeMode } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/free-mode";
 
-import { getProductById } from "../services/productService.js"; // your API call
+import { getProductById } from "../services/productService.js"; 
 
 function a11yProps(index) {
   return {
@@ -52,7 +52,7 @@ function ProductPage() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-  });
+  },[]);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -68,7 +68,7 @@ function ProductPage() {
       }
     };
     fetchProduct();
-  }, [id]);
+  },[id]);
 
   if (!product) return <Typography>Loading...</Typography>;
 

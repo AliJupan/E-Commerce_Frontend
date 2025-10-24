@@ -86,7 +86,7 @@ const Checkout = () => {
             street: profile.address || "",
             city: profile.city || "",
             country: profile.country || "",
-            zip: profile.postal_code || "",
+            zip: profile.postCode || "",
           }));
         } catch (error) {
           console.error("Failed to fetch user info:", error);
@@ -108,7 +108,7 @@ const Checkout = () => {
       city: formData.city,
       postalCode: formData.zip,
       address: formData.street,
-      cardLast4: formData.cardNumber.slice(-4), // only last 4 digits
+      cardLast4: formData.cardNumber.slice(-4), 
       items: cart.map((item) => ({
         productId: item.id,
         quantity: item.quantity,
@@ -116,8 +116,8 @@ const Checkout = () => {
     };
 
     try {
-      await createOrder(orderData); // send order to backend
-      setOpenModal(true); // show confirmation modal
+      await createOrder(orderData); 
+      setOpenModal(true); 
       clearCart();
     } catch (err) {
       console.error(err);
@@ -458,7 +458,6 @@ const Checkout = () => {
           <Typography gutterBottom>
             A confirmation email has been sent to {formData.email}.
           </Typography>
-          <Typography>Total Paid: ${total.toFixed(2)}</Typography>
         </DialogContent>
         <DialogActions>
           <Button

@@ -13,7 +13,7 @@ export const login = async (email, password) => {
 };
 
 export const getProfile = async (id) => {
-  const { data } = await api.get(`/auth/profile/${id}`);
+  const { data } = await api.get(`/auth/profile/me`);
   return data;
 };
 // 🔹 Forgot password (sends reset link to email)

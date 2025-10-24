@@ -23,7 +23,7 @@ function valuetext(value) {
 function Products() {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState([0, 100]);
-  const [priceRange, setPriceRange] = useState([0, 100]);
+  const [priceRange, setPriceRange] = useState([0, 10000]);
   const [products, setProducts] = useState([]);
   const [total, setTotal] = useState(0);
   const [categories, setCategories] = useState([]);
